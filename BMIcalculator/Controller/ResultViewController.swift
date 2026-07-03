@@ -13,29 +13,35 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
-    let bmiResult : Double = 0
-    let category : String = ""
+    var bmiResult : Double = 0
+
+    var category : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        resultLabel.text = "\(bmiResult)"
+        resultLabel.text = String(format: "%.2f", bmiResult)
+        resultLabel.isHidden = false
+        
+        if bmiResult <= 18.5 || bmiResult <= 18.5 {
+            category = "You are underweight"
+        } else if bmiResult > 18.5 && bmiResult <= 24.9 || bmiResult > 18.5 && bmiResult <= 24.9  {
+            category = "You are in the normal range"
+        } else if bmiResult > 24.9 && bmiResult <= 29.9 || bmiResult > 24.9 && bmiResult <= 29.9{
+            category = "You are overweight"
+        } else {
+            category = "You are obese"
+        }
+
         categoryLabel.text = "\(category)"
+        categoryLabel.isHidden = false
     }
     
+   
 
     @IBAction func BackBtn(_ sender: Any) {
         self.performSegue(withIdentifier: "toHome", sender: self)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

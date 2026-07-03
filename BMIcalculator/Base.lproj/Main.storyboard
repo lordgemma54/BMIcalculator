@@ -157,6 +157,7 @@
                         <outlet property="heightUnits" destination="Dc1-46-1wm" id="e47-Jp-YqP"/>
                         <outlet property="imperialLabel" destination="fsI-bc-FQC" id="JnM-ww-Xik"/>
                         <outlet property="metricLabel" destination="v5e-V5-a14" id="XAO-B7-FOF"/>
+                        <outlet property="unitSwitch" destination="CyA-4g-b9C" id="8xy-OF-dE4"/>
                         <outlet property="weightUnits" destination="jED-4c-PnM" id="j3X-sM-Vyh"/>
                         <segue destination="gSA-C4-f05" kind="presentation" identifier="toResult" id="L1k-yL-6fc"/>
                     </connections>

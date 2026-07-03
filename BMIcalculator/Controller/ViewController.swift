@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var unitSwitch: UISwitch!
+    
     @IBOutlet weak var imperialLabel: UILabel!
     
     @IBOutlet weak var metricLabel: UILabel!
@@ -19,6 +21,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    let bmiLogic = BmiLogic()
+    var impBMI : Double = 0
+    var metBMI : Double = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,8 +32,38 @@ class ViewController: UIViewController {
         metricLabel.alpha = 0.2
     }
 
-    @IBAction func CalculateBtn(_ sender: Any) {
+    @IBAction func CalculateBtn(_ sender: UIButton) {
+        
+        if unitSwitch.isOn {
+            let validHeight = heightUnits.text ?? ""
+            let validWeight = weightUnits.text ?? ""
+            
+            guard let imperialHeight = Int(validHeight), imperialHeight > 0, let imperialWeight = Double(validWeight), imperialWeight > 0.0 else {
+                errorLabel.text = "height and weight must be positive numbers"
+                return
+            }
+            
+           impBMI = bmiLogic.calcBmiImperial(imperialHeight, imperialWeight)
+        }
+        else {
+            let validHeight = heightUnits.text ?? ""
+            let validWeight = weightUnits.text ?? ""
+            
+            guard let metricHeight = Int(validHeight), metricHeight > 0, let metricWeight = Double(validWeight), metricWeight > 0.0 else {
+                errorLabel.text = "height and weight must be positive numbers"
+                return
+            }
+            metBMI = bmiLogic.calcBmiMetric(metricHeight, metricWeight)
+        }
+        
         self.performSegue(withIdentifier: "toResult", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toResult") {
+            let result = segue.destination as! ResultViewController
+            result.bmiResult = unitSwitch.isOn ? impBMI : metBMI
+        }
     }
     
     @IBAction func unitSwitch(_ sender: UISwitch) {

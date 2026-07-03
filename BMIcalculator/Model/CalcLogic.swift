@@ -7,12 +7,15 @@
 
 import UIKit
 
-struct bmiLogic {
-    var height : Int
-    var weight : Double
+struct BmiLogic {
     
-    init (_ height: Int, _ weight: Double) {
-        self.height = height
-        self.weight = weight
+    func calcBmiImperial (_ height: Int, _ weight: Double) -> Double {
+        let heightSquared = height * height
+        return (weight * 703) / Double (heightSquared)
+    }
+    
+    func calcBmiMetric (_ height: Int, _ weight: Double) -> Double {
+        let heightConversion = Double (height) / 100
+        return weight / (heightConversion * heightConversion)
     }
 }
