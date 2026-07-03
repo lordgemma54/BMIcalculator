@@ -15,6 +15,4 @@ struct bmiLogic {
         self.height = height
         self.weight = weight
     }
-    
-    
 }
