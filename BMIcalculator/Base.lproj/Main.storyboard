@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="oIo-Xq-WMk">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oIo-Xq-WMk">
                                 <rect key="frame" x="30" y="89" width="223" height="664"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-hx-AOz" userLabel="InfoStack">
-                                        <rect key="frame" x="5" y="0.0" width="213.33333333333334" height="61"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-hx-AOz" userLabel="InfoStack">
+                                        <rect key="frame" x="5" y="0.0" width="213.33333333333334" height="86.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose metric or imperial units. Enter your height and weight.  Calculate your BMI" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8i-nO-Vx8">
                                                 <rect key="frame" x="0.0" y="0.0" width="213.33333333333334" height="61"/>
@@ -28,16 +28,16 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWU-H2-NBi">
-                                                <rect key="frame" x="87.666666666666671" y="0.0" width="37.666666666666671" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWU-H2-NBi">
+                                                <rect key="frame" x="87.666666666666671" y="66" width="37.666666666666671" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemGreenColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CWu-W7-WI4" userLabel="ButtonStack">
-                                        <rect key="frame" x="10" y="111" width="203" height="28"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CWu-W7-WI4" userLabel="ButtonStack">
+                                        <rect key="frame" x="10" y="106.33333333333334" width="203" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imperial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsI-bc-FQC">
                                                 <rect key="frame" x="0.0" y="0.0" width="61" height="28"/>
@@ -60,29 +60,30 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TVd-gH-r4L" userLabel="HeightStack">
-                                        <rect key="frame" x="10" y="189" width="203" height="34.333333333333343"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TVd-gH-r4L" userLabel="HeightStack">
+                                        <rect key="frame" x="10" y="154.33333333333334" width="203" height="34.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOF-95-bXJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="54.666666666666664" height="34.333333333333336"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Inches" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dc1-46-1wm">
-                                                <rect key="frame" x="71" y="0.0" width="61" height="34.333333333333336"/>
+                                                <rect key="frame" x="64.666666666666657" y="0.0" width="70.666666666666657" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="amz-6a-Bdg" userLabel="ClearHeight">
-                                                <rect key="frame" x="155.33333333333334" y="0.0" width="67.666666666666657" height="34.333333333333336"/>
+                                                <rect key="frame" x="145.33333333333334" y="0.0" width="64" height="34.333333333333336"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Clear">
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" red="0.77532475190000005" green="1" blue="0.61907658679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" red="0.8413085938" green="0.2751464844" blue="0.3176269531" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="clearHeight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RLV-ou-WDZ"/>
@@ -90,29 +91,30 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FxA-Dc-AP0" userLabel="WeightStack">
-                                        <rect key="frame" x="10" y="273.33333333333331" width="203" height="34.333333333333314"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FxA-Dc-AP0" userLabel="WeightStack">
+                                        <rect key="frame" x="10" y="208.66666666666669" width="203" height="34.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pea-ng-MWJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="57.666666666666664" height="34.333333333333336"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pounds" textAlignment="natural" minimumFontSize="17" id="jED-4c-PnM">
-                                                <rect key="frame" x="77.666666666666657" y="0.0" width="67.666666666666657" height="34.333333333333336"/>
+                                                <rect key="frame" x="67.666666666666657" y="0.0" width="76.666666666666657" height="34.333333333333336"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMc-BY-cTL" userLabel="ClearWeight">
-                                                <rect key="frame" x="142" y="0.0" width="61" height="34.333333333333336"/>
+                                                <rect key="frame" x="154.33333333333334" y="0.0" width="48.666666666666657" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Clear">
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" red="0.77532475190000005" green="1" blue="0.61907658679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" red="0.8413085938" green="0.2751464844" blue="0.3176269531" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="clearWeight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mzW-ua-ssf"/>
@@ -121,7 +123,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iV-1k-UcF">
-                                        <rect key="frame" x="55.333333333333321" y="357.66666666666674" width="112.66666666666669" height="306.33333333333326"/>
+                                        <rect key="frame" x="55.333333333333321" y="263" width="112.66666666666669" height="401"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Calculate">
                                             <backgroundConfiguration key="background">

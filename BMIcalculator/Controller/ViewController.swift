@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         imperialLabel.alpha = 1.0
         metricLabel.alpha = 0.2
+        errorLabel.text = " "
     }
 
     @IBAction func CalculateBtn(_ sender: UIButton) {
@@ -38,26 +39,23 @@ class ViewController: UIViewController {
             let validHeight = heightUnits.text ?? ""
             let validWeight = weightUnits.text ?? ""
             
-            guard let imperialHeight = Int(validHeight), imperialHeight > 0, let imperialWeight = Double(validWeight), imperialWeight > 0.0 else {
+            guard let imperialHeight = Double(validHeight), imperialHeight > 0, let imperialWeight = Double(validWeight), imperialWeight > 0.0 else {
                 errorLabel.text = "Height and weight must be valid numbers"
-                errorLabel.isHidden = false
                 return
             }
             impBMI = bmiLogic.calcBmiImperial(imperialHeight, imperialWeight)
-            errorLabel.isHidden = true
-
+            errorLabel.text = " "
         }
         else {
             let validHeight = heightUnits.text ?? ""
             let validWeight = weightUnits.text ?? ""
             
-            guard let metricHeight = Int(validHeight), metricHeight > 0, let metricWeight = Double(validWeight), metricWeight > 0.0 else {
+            guard let metricHeight = Double(validHeight), metricHeight > 0, let metricWeight = Double(validWeight), metricWeight > 0.0 else {
                 errorLabel.text = "Height and weight must be valid numbers"
-                errorLabel.isHidden = false
                 return
             }
             metBMI = bmiLogic.calcBmiMetric(metricHeight, metricWeight)
-            errorLabel.isHidden = true
+            errorLabel.text = " "
         }
         self.performSegue(withIdentifier: "toResult", sender: self)
     }
