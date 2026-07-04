@@ -18,4 +18,18 @@ struct BmiLogic {
         let heightConversion = Double (height) / 100
         return weight / (heightConversion * heightConversion)
     }
+    
+    func getCategory(finalBMI: Double) -> String {
+        switch finalBMI {
+        case ..<18.5:
+            return "You are underweight"
+        case 18.5 ... 24.9:
+            return "You are in the normal range"
+        case 24.9 ... 29.9:
+            return "You are overweight"
+        default: return "You are obese"
+        }
+    }
+    
+ 
 }

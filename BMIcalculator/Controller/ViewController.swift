@@ -39,30 +39,35 @@ class ViewController: UIViewController {
             let validWeight = weightUnits.text ?? ""
             
             guard let imperialHeight = Int(validHeight), imperialHeight > 0, let imperialWeight = Double(validWeight), imperialWeight > 0.0 else {
-                errorLabel.text = "height and weight must be positive numbers"
+                errorLabel.text = "Height and weight must be valid numbers"
+                errorLabel.isHidden = false
                 return
             }
-            
-           impBMI = bmiLogic.calcBmiImperial(imperialHeight, imperialWeight)
+            impBMI = bmiLogic.calcBmiImperial(imperialHeight, imperialWeight)
+            errorLabel.isHidden = true
+
         }
         else {
             let validHeight = heightUnits.text ?? ""
             let validWeight = weightUnits.text ?? ""
             
             guard let metricHeight = Int(validHeight), metricHeight > 0, let metricWeight = Double(validWeight), metricWeight > 0.0 else {
-                errorLabel.text = "height and weight must be positive numbers"
+                errorLabel.text = "Height and weight must be valid numbers"
+                errorLabel.isHidden = false
                 return
             }
             metBMI = bmiLogic.calcBmiMetric(metricHeight, metricWeight)
+            errorLabel.isHidden = true
         }
-        
         self.performSegue(withIdentifier: "toResult", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "toResult") {
             let result = segue.destination as! ResultViewController
-            result.bmiResult = unitSwitch.isOn ? impBMI : metBMI
+            let finalBMI = unitSwitch.isOn ? impBMI : metBMI
+            result.bmiResult = finalBMI
+            result.category = bmiLogic.getCategory(finalBMI: finalBMI)
         }
     }
     
