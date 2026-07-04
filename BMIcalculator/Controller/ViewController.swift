@@ -60,15 +60,6 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "toResult", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "toResult") {
-            let result = segue.destination as! ResultViewController
-            let finalBMI = unitSwitch.isOn ? impBMI : metBMI
-            result.bmiResult = finalBMI
-            result.category = bmiLogic.getCategory(finalBMI)
-        }
-    }
-    
     @IBAction func unitSwitch(_ sender: UISwitch) {
         if sender.isOn {
             metricLabel.alpha = 0.2
@@ -97,6 +88,14 @@ class ViewController: UIViewController {
         weightUnits.text = ""
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toResult") {
+            let result = segue.destination as! ResultViewController
+            let finalBMI = unitSwitch.isOn ? impBMI : metBMI
+            result.bmiResult = finalBMI
+            result.category = bmiLogic.getCategory(finalBMI)
+        }
+    }
     
 }
 
