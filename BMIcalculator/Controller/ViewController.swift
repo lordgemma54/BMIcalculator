@@ -73,14 +73,21 @@ class ViewController: UIViewController {
     
     @IBAction func unitSwitch(_ sender: UISwitch) {
         if sender.isOn {
+            metricLabel.alpha = 0.2
+            imperialLabel.alpha = 1.0
             heightUnits.placeholder = "Inches"
             weightUnits.placeholder = "Pounds"
-            
+            heightUnits.text = ""
+            weightUnits.text = ""
+
         } else {
             metricLabel.alpha = 1.0
             imperialLabel.alpha = 0.2
             heightUnits.placeholder = "Centimeters"
             weightUnits.placeholder = "Kilograms"
+            heightUnits.text = ""
+            weightUnits.text = ""
+
         }
     }
     
