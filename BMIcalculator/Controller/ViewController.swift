@@ -38,6 +38,8 @@ class ViewController: UIViewController {
             let validHeight = heightUnits.text ?? ""
             let validWeight = weightUnits.text ?? ""
             
+            
+            
             guard let imperialHeight = Int(validHeight), imperialHeight > 0, let imperialWeight = Double(validWeight), imperialWeight > 0.0 else {
                 errorLabel.text = "Height and weight must be valid numbers"
                 errorLabel.isHidden = false
