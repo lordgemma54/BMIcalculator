@@ -19,7 +19,7 @@ struct BmiLogic {
         return weight / (heightConversion * heightConversion)
     }
     
-    func getCategory(finalBMI: Double) -> String {
+    func getCategory(_ finalBMI: Double) -> String {
         switch finalBMI {
         case ..<18.5:
             return "You are underweight"
